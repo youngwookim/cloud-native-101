@@ -9,6 +9,7 @@ date: 2019-11-03
 theme: gaia
 class: lead
 size: A4
+backgroundColor: white
 -->
 
 <!-- Global style -->
@@ -75,7 +76,7 @@ https://www.infoworld.com/article/3281046/what-is-cloud-native-the-modern-way-to
 
 > In general usage, “cloud-native” is an approach to building and running applications  
 > that exploits the advantages of the cloud computing delivery model. “Cloud-native” is 
-> about howapplications are created and deployed, not where. It implies that the apps 
+> about **how applications are created and deployed, not where.** It implies that the apps 
 > live in the public cloud, as opposed to an on-premises datacenter.
 
 > The CNCF defines “cloud-native” a little more narrowly, to mean using open source 
