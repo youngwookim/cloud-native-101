@@ -78,11 +78,20 @@ https://blog.risingstack.com/the-history-of-kubernetes/
 
 ## What is Container?
 
-- Containers are a method of virtualization that packages an application's code, configurations, and dependencies into building blocks for consistency, efficiency, productivity, and version control. This page gathers resources about containers, including technical definitions and comparisons.
+- Containers are a method of virtualization that packages an application's code, configurations, and dependencies into building blocks for consistency, efficiency, productivity, and version control.
 
 https://www.aquasec.com/wiki/display/containers/What+is+a+Container
 
 ---
+
+![](https://d1.awsstatic.com/product-marketing/containers/Containers_whats_in_a_container.945c530bfe6e19ea90510967fe8c56be746626b8.png)
+
+> *컨테이너는 애플리케이션의 코드, 구성 및 종속성을 하나의 객체로 패키징하는 표준화된 방식을 제공합니다. **컨테이너는 서버에 설치된 운영 체제를 공유하며 리소스가 격리된 프로세스 형태로 실행되므로 환경에 상관 없이 빠르고 안정적이며 일관된 배포를 보장**합니다.*
+
+https://aws.amazon.com/ko/containers/
+
+---
+
 ## Containers
 
 ![bg right width:600px](https://www.docker.com/sites/default/files/d8/2018-11/docker-containerized-appliction-blue-border_2.png)
@@ -195,6 +204,37 @@ Server Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.2", ......
 ---
 
 ## Namespaces, Labels and Selectors, Annotations and Field Selectors
+
+- *name*
+  - Each object in your cluster has a Name that is unique for that type of resource.
+- *namespace*
+  - Kubernetes supports multiple virtual clusters backed by the same physical cluster. These virtual clusters are called namespaces.
+- *label*
+  - Labels are key/value pairs that are attached to objects, such as pods.
+  - Example labels:
+    - ```"environment" : "dev", "environment" : "qa", "environment" : "production"```
+  - Via a *label selector*, the client/user can identify a set of objects.
+  - See also, https://www.replex.io/blog/9-best-practices-and-examples-for-working-with-kubernetes-labels
+
+---
+
+- *Annotations*
+  - You can use Kubernetes ```annotations``` to attach arbitrary non-identifying metadata to objects.
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: annotations-demo
+  annotations:
+    imageregistry: "https://hub.docker.com/"
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.7.9
+    ports:
+    - containerPort: 80
+```
 
 ---
 
@@ -747,7 +787,16 @@ Visit https://github.com/kubernetes/examples for more examples...
 
 ---
 
-#
+# Kubernetes best practices for **stateful (data) apps**
+
+- https://sookocheff.com/post/kubernetes/building-stateful-services/
+- https://www.altoros.com/blog/running-stateful-apps-on-kubernetes-with-statefulsets/
+- https://cloud.google.com/blog/products/containers-kubernetes/best-practices-for-building-kubernetes-operators-and-stateful-apps
+- https://kubernetes.io/docs/setup/best-practices/
+
+---
+
+![height:400px](https://kublr.com/wp-content/themes/kublr-2018-theme-alt/images/home/much_more_to_it.png)
 
 ---
 
@@ -767,6 +816,8 @@ https://landscape.cncf.io/
 - https://dzone.com/articles/the-complete-kubernetes-collection-tutorials-and-tools
 - https://github.com/ThijsFeryn/hello-nodejs-minikube
 - https://github.com/kubernetes/examples
+- https://www.replex.io/blog/9-best-practices-and-examples-for-working-with-kubernetes-labels
+- https://aws.amazon.com/ko/containers/
 
 ---
 
@@ -775,6 +826,7 @@ https://landscape.cncf.io/
 - https://www.docker.com/resources/what-container
 - https://selleo.com/blog/kubernetes-101
 - https://container.training/kube-halfday.yml.html
+- https://kublr.com/
 
 ---
 
